@@ -1,5 +1,7 @@
 **English** · [Français](README.fr.md)
 
+**Anthony Hunt** · [Project page on ingevision.cloud](https://ingevision.cloud/?lang=en&p=risque-fournisseur) · [LinkedIn](https://www.linkedin.com/in/anthony-hunt-3948a9196) · [GitHub profile](https://github.com/anthohunt)
+
 > Showcase repository: the code and data of this project are private; this README describes it.
 
 # Supplier risk agent

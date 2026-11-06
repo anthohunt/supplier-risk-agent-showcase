@@ -1,5 +1,7 @@
 [English](README.md) · **Français**
 
+**Anthony Hunt** · [Fiche du projet sur ingevision.cloud](https://ingevision.cloud/?p=risque-fournisseur) · [LinkedIn](https://www.linkedin.com/in/anthony-hunt-3948a9196) · [Profil GitHub](https://github.com/anthohunt)
+
 > Dépôt vitrine : le code et les données de ce projet sont privés ; ce README le décrit.
 
 # Agent risque fournisseur
