@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 660" width="800" height="660" font-family="IBM Plex Sans, Segoe UI, Helvetica Neue, Arial, sans-serif" role="img" aria-label="Supplier risk agent architecture">
+<title>Supplier risk agent architecture</title>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1f4fd1"/></marker><marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#b8c2d3"/></marker></defs>
+<rect width="800" height="660" rx="16" fill="#ffffff"/>
+<rect x="20" y="20" width="760" height="110" rx="14" fill="#e6ebf2" stroke="#c9d1dd" stroke-dasharray="4 4"/>
+<text x="34" y="42" fill="#5d6b82" font-size="12" font-weight="600" letter-spacing=".72">NEWS</text>
+<rect x="20" y="190" width="760" height="110" rx="14" fill="#e6ebf2" stroke="#c9d1dd" stroke-dasharray="4 4"/>
+<text x="766" y="212" text-anchor="end" fill="#5d6b82" font-size="12" font-weight="600" letter-spacing=".72">APP · ON THE LAPTOP</text>
+<rect x="20" y="360" width="760" height="110" rx="14" fill="#e6ebf2" stroke="#c9d1dd" stroke-dasharray="4 4"/>
+<text x="34" y="382" fill="#5d6b82" font-size="12" font-weight="600" letter-spacing=".72">MODEL · ON THE LAPTOP</text>
+<rect x="20" y="530" width="760" height="110" rx="14" fill="#e6ebf2" stroke="#c9d1dd" stroke-dasharray="4 4"/>
+<text x="34" y="552" fill="#5d6b82" font-size="12" font-weight="600" letter-spacing=".72">ON SCREEN</text>
+<g id="b-gdelt" class="box"><rect x="36" y="52" width="220" height="60" rx="10" fill="#fff" stroke="#1f4fd1" stroke-width="2.2"/><text x="48" y="76" fill="#14213d" font-size="13.5" font-weight="600">GDELT</text><text x="48" y="96" fill="#5d6b82" font-size="12">global news feed</text></g>
+<g id="b-pub" class="box"><rect x="544" y="52" width="220" height="60" rx="10" fill="#fff" stroke="#1f4fd1" stroke-width="2.2"/><text x="556" y="76" fill="#14213d" font-size="13.5" font-weight="600">Publisher site</text><text x="556" y="96" fill="#5d6b82" font-size="12">full article</text></g>
+<g id="b-col" class="box"><rect x="36" y="222" width="180" height="60" rx="10" fill="#fff" stroke="#1f4fd1" stroke-width="2.2"/><text x="48" y="246" fill="#14213d" font-size="13.5" font-weight="600">Collector</text><text x="48" y="266" fill="#5d6b82" font-size="12">Python · full text</text></g>
+<g id="b-har" class="box"><rect x="300" y="222" width="200" height="60" rx="10" fill="#fff" stroke="#1f4fd1" stroke-width="2.2"/><text x="312" y="246" fill="#14213d" font-size="13.5" font-weight="600">Harness</text><text x="312" y="266" fill="#5d6b82" font-size="12">questions · splitting</text></g>
+<g id="b-rul" class="box"><rect x="564" y="222" width="200" height="60" rx="10" fill="#fff" stroke="#1f4fd1" stroke-width="2.2"/><text x="576" y="246" fill="#14213d" font-size="13.5" font-weight="600">Rules in code</text><text x="576" y="266" fill="#5d6b82" font-size="12">94 suppliers · 2,033 domains</text></g>
+<g id="b-kev" class="box"><rect x="300" y="392" width="200" height="60" rx="10" fill="#fff" stroke="#1f4fd1" stroke-width="2.2"/><text x="312" y="416" fill="#14213d" font-size="13.5" font-weight="600">Kev-0.8B</text><text x="312" y="436" fill="#5d6b82" font-size="12">llama.cpp · CUDA</text></g>
+<g id="b-buy" class="box"><rect x="300" y="562" width="200" height="60" rx="10" fill="#fff" stroke="#1f4fd1" stroke-width="2.2"/><text x="312" y="586" fill="#14213d" font-size="13.5" font-weight="600">Buyer</text><text x="312" y="606" fill="#5d6b82" font-size="12">settles each “to check”</text></g>
+<g id="b-win" class="box"><rect x="564" y="562" width="200" height="60" rx="10" fill="#fff" stroke="#1f4fd1" stroke-width="2.2"/><text x="576" y="586" fill="#14213d" font-size="13.5" font-weight="600">Window</text><text x="576" y="606" fill="#5d6b82" font-size="12">verdict · alert · reasoning</text></g>
+<g id="note"><rect x="36" y="392" width="236" height="60" rx="10" fill="none" stroke="#93a0b6" stroke-width="1.4" stroke-dasharray="5 4"/><text x="48" y="416" fill="#14213d" font-size="13" font-weight="600">Harness built by La boucle</text><text x="48" y="436" fill="#5d6b82" font-size="12">trials measured · sealed exam</text></g>
+<g id="a1" class="arrow">
+<path class="trace" d="M100 112L100 222" fill="none" stroke="#1f4fd1" stroke-width="2.4" marker-end="url(#a)"/>
+<rect class="lab" x="52.6" y="157" width="94.8" height="18" rx="4" fill="#fff"/><text class="labt" x="100" y="170" text-anchor="middle" fill="#1f4fd1" font-size="12" font-weight="600">new articles</text>
+<circle class="num" cx="40.6" cy="167" r="9" fill="#fff" stroke="#1f4fd1" stroke-width="1.5"/><text class="numt" x="40.6" y="171" text-anchor="middle" fill="#1f4fd1" font-size="11" font-weight="700" font-family="IBM Plex Mono, Consolas, monospace">1</text>
+</g>
+<g id="a2" class="arrow">
+<path class="trace" d="M600 112L600 160L180 160L180 222" fill="none" stroke="#1f4fd1" stroke-width="2.4" marker-end="url(#a)"/>
+<rect class="lab" x="352.9" y="150" width="74.1" height="18" rx="4" fill="#fff"/><text class="labt" x="390" y="163" text-anchor="middle" fill="#1f4fd1" font-size="12" font-weight="600">full text</text>
+<circle class="num" cx="340.9" cy="160" r="9" fill="#fff" stroke="#1f4fd1" stroke-width="1.5"/><text class="numt" x="340.9" y="164" text-anchor="middle" fill="#1f4fd1" font-size="11" font-weight="700" font-family="IBM Plex Mono, Consolas, monospace">2</text>
+</g>
+<g id="a3" class="arrow">
+<path class="trace" d="M216 252L300 252" fill="none" stroke="#1f4fd1" stroke-width="2.4" marker-end="url(#a)"/>
+<rect class="lab" x="227.8" y="242" width="60.3" height="18" rx="4" fill="#fff"/><text class="labt" x="258" y="255" text-anchor="middle" fill="#1f4fd1" font-size="12" font-weight="600">article</text>
+<circle class="num" cx="258.0" cy="233" r="9" fill="#fff" stroke="#1f4fd1" stroke-width="1.5"/><text class="numt" x="258.0" y="237" text-anchor="middle" fill="#1f4fd1" font-size="11" font-weight="700" font-family="IBM Plex Mono, Consolas, monospace">3</text>
+</g>
+<g id="a4" class="arrow">
+<path class="trace" d="M350 282L350 392" fill="none" stroke="#1f4fd1" stroke-width="2.4" marker-end="url(#a)"/>
+<rect class="lab" x="312.9" y="312" width="74.1" height="18" rx="4" fill="#fff"/><text class="labt" x="350" y="325" text-anchor="middle" fill="#1f4fd1" font-size="12" font-weight="600">questions</text>
+<circle class="num" cx="300.9" cy="322" r="9" fill="#fff" stroke="#1f4fd1" stroke-width="1.5"/><text class="numt" x="300.9" y="326" text-anchor="middle" fill="#1f4fd1" font-size="11" font-weight="700" font-family="IBM Plex Mono, Consolas, monospace">4</text>
+</g>
+<g id="a5" class="arrow">
+<path class="trace" d="M450 392L450 282" fill="none" stroke="#1f4fd1" stroke-width="2.4" marker-end="url(#a)"/>
+<rect class="lab" x="399.1" y="342" width="101.7" height="18" rx="4" fill="#fff"/><text class="labt" x="450" y="355" text-anchor="middle" fill="#1f4fd1" font-size="12" font-weight="600">probabilities</text>
+<circle class="num" cx="387.1" cy="352" r="9" fill="#fff" stroke="#1f4fd1" stroke-width="1.5"/><text class="numt" x="387.1" y="356" text-anchor="middle" fill="#1f4fd1" font-size="11" font-weight="700" font-family="IBM Plex Mono, Consolas, monospace">5</text>
+</g>
+<g id="a6" class="arrow">
+<path class="trace" d="M500 252L564 252" fill="none" stroke="#1f4fd1" stroke-width="2.4" marker-end="url(#a)"/>
+<rect class="lab" x="501.9" y="242" width="60.3" height="18" rx="4" fill="#fff"/><text class="labt" x="532" y="255" text-anchor="middle" fill="#1f4fd1" font-size="12" font-weight="600">signals</text>
+<circle class="num" cx="532.0" cy="233" r="9" fill="#fff" stroke="#1f4fd1" stroke-width="1.5"/><text class="numt" x="532.0" y="237" text-anchor="middle" fill="#1f4fd1" font-size="11" font-weight="700" font-family="IBM Plex Mono, Consolas, monospace">6</text>
+</g>
+<g id="a7" class="arrow">
+<path class="trace" d="M664 282L664 562" fill="none" stroke="#1f4fd1" stroke-width="2.4" marker-end="url(#a)"/>
+<rect class="lab" x="571.8" y="412" width="184.5" height="18" rx="4" fill="#fff"/><text class="labt" x="664" y="425" text-anchor="middle" fill="#1f4fd1" font-size="12" font-weight="600">risk · to check · no risk</text>
+<circle class="num" cx="559.8" cy="422" r="9" fill="#fff" stroke="#1f4fd1" stroke-width="1.5"/><text class="numt" x="559.8" y="426" text-anchor="middle" fill="#1f4fd1" font-size="11" font-weight="700" font-family="IBM Plex Mono, Consolas, monospace">7</text>
+</g>
+<g id="a8" class="arrow">
+<path class="trace" d="M564 592L500 592" fill="none" stroke="#1f4fd1" stroke-width="2.4" marker-end="url(#a)"/>
+<rect class="lab" x="508.8" y="582" width="46.5" height="18" rx="4" fill="#fff"/><text class="labt" x="532" y="595" text-anchor="middle" fill="#1f4fd1" font-size="12" font-weight="600">alert</text>
+<circle class="num" cx="532.0" cy="573" r="9" fill="#fff" stroke="#1f4fd1" stroke-width="1.5"/><text class="numt" x="532.0" y="577" text-anchor="middle" fill="#1f4fd1" font-size="11" font-weight="700" font-family="IBM Plex Mono, Consolas, monospace">8</text>
+</g>
+</svg>

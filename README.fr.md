@@ -1,42 +1,34 @@
 [English](README.md) · **Français**
 
-**Anthony Hunt** · [Fiche du projet sur ingevision.cloud](https://ingevision.cloud/?p=risque-fournisseur) · [LinkedIn](https://www.linkedin.com/in/anthony-hunt-3948a9196) · [Profil GitHub](https://github.com/anthohunt)
-
-> Dépôt vitrine : le code et les données de ce projet sont privés ; ce README le décrit.
-
 # Agent risque fournisseur
 
-Un petit modèle de 0,8 milliard de paramètres qui lit la presse et signale, hors ligne, les articles qui annoncent un risque pour un fournisseur.
+**Un modèle de 0,8 milliard de paramètres, sur un ordinateur portable, lit la presse et signale les articles qui annoncent un risque pour un fournisseur d'un client.**
 
-## Le problème
+[![Schéma animé : un article part du flux de presse GDELT, passe par le collecteur, le harnais, le modèle Kev-0.8B et les règles en code jusqu'à l'alerte à l'écran, puis les vraies mesures du banc (cliquer pour la vidéo complète)](docs/demo.gif)](https://drive.google.com/file/d/1FMFfoRbmpmj5kqtQE0tU73aXCwSu7vCI/view)
 
-Une équipe achats doit savoir vite quand un de ses fournisseurs subit un incident qui peut freiner ses livraisons : arrêt de production, grève, procès, difficulté financière, pénurie, attaque informatique. Ce projet est un cas client : l'agent suit une liste de 94 fournisseurs et doit tourner sur un ordinateur portable, sans envoyer de données à l'extérieur.
+*Schéma animé, pas une capture d'écran : l'appli fait tourner un modèle d'IA sur le portable. Les chiffres sont les vraies mesures du banc. Animation en anglais. [Vidéo complète (1:18)](https://drive.google.com/file/d/1FMFfoRbmpmj5kqtQE0tU73aXCwSu7vCI/view)*
 
-## Comment ça marche
+## Ce qu'on fait avec
 
-- Les articles arrivent du flux mondial de presse GDELT ; l'agent lit l'article complet.
-- Il cherche si un fournisseur de la liste subit un événement perturbateur encore en cours, parmi six types : production, travail, légal, financier, prix ou pénurie, cyber.
-- Le code vérifie la source : le domaine du site doit figurer dans une liste fermée de 2 033 domaines fiables.
-- Décision : « risque » si le signal vient d'une source fiable, « à vérifier » sinon (un humain tranche), « pas de risque » sans signal.
-- Les poids du modèle ne sont pas modifiés. Seul le harnais autour du modèle (questions posées, découpage, règles) est amélioré, par La boucle : un agent chercheur propose des essais, chacun est mesuré, et un examen scellé décide.
+- **Suivre une liste de fournisseurs.** 94 fournisseurs d'un cas client ; les articles viennent du flux de presse GDELT et sont lus en entier sur le site de l'éditeur.
+- **Trois verdicts.** Risque, à vérifier, pas de risque. Un signal = un fournisseur de la liste touché par un événement encore en cours, parmi six types : production, travail, légal, financier, prix ou pénurie, cyber.
+- **Sources vérifiées par le code.** Un signal devient un risque seulement si le site figure dans une liste fermée de 2 033 domaines fiables ; sinon un humain tranche.
+- **Modèle inchangé.** Les poids de Kev-0.8B ne sont jamais modifiés. [La boucle](https://github.com/anthohunt/la-boucle-engine) améliore seulement le harnais autour (questions posées, découpage, règles) : un agent chercheur propose des essais, chacun est mesuré, un examen scellé décide.
+- **Appli Windows.** Un `.exe` autonome en anglais : les articles avec leur verdict, une alerte sur un risque, le raisonnement de l'agent.
 
-## Ce qui est construit
+## Architecture
 
-- Banc de test équilibré entre les trois décisions : examen scellé de 240 articles, vérification de 240 articles. Seuil de réussite fixé à 224 justes sur 240.
-- Entraînement mesuré sur 1 020 articles : de 76,18 % de décisions justes pour le modèle seul à 90,39 % (922 sur 1 020) avec le meilleur harnais.
-- Premier examen : 205 justes sur 240 (85,4 %), sous le seuil. Cause : sur-ajustement aux articles d'entraînement, d'où l'ajout d'un lot de contrôle caché.
-- Application Windows autonome, en anglais : liste des articles avec leur verdict, alerte sur un risque et raisonnement de l'agent. Taille totale 2,57 Go (modèle 1,52 Go, moteur 0,94 Go, application 0,11 Go). Sur 100 articles, décisions identiques à celles du banc ; 3,97 s par article en moyenne.
+![Architecture de l'agent risque fournisseur : GDELT liste les articles, le collecteur récupère le texte complet chez l'éditeur, le harnais pose ses questions à Kev-0.8B sur le portable, les règles en code transforment ses réponses en risque, à vérifier ou pas de risque, et la fenêtre alerte l'acheteur](docs/architecture.svg)
 
-État : en pause. Le second examen n'a pas été passé.
+## État
 
-## Ce qui est public
+- **Banc.** Équilibré entre les trois verdicts : examen scellé de 240 articles, vérification de 240 ; seuil de 224 / 240 sur les deux.
+- **Mesuré.** Sur 1 020 articles d'entraînement : 76,18 % de décisions justes pour le modèle seul, 90,39 % (922) avec le meilleur harnais.
+- **Examen 1.** 205 / 240 (85,4 %), sous le seuil : sur-ajustement aux articles d'entraînement, d'où un lot de contrôle caché.
+- **Appli.** 2,57 Go en tout (modèle 1,52, moteur 0,94, appli 0,11) ; mêmes décisions que le banc sur 100 / 100 articles ; 3,97 s par article en moyenne.
+- **En pause depuis octobre 2026.** Examen 2 non passé. Code, données et appli sont un livrable client confidentiel : ce dépôt ne contient que cette page.
+- **Pile.** Kev-0.8B (modèle de décision open source construit sur Qwen3.5-0.8B), Python, PyTorch et transformers sur le banc, llama.cpp (CUDA) dans l'appli, PyInstaller, GDELT.
 
-Cette page seulement. Le code, les données et l'application sont un livrable client confidentiel.
+---
 
-## Pile technique
-
-- Kev-0.8B, modèle de décision open source basé sur Qwen3.5-0.8B
-- Python, PyTorch et transformers pour l'entraînement
-- llama.cpp (CUDA) comme moteur de l'application
-- PyInstaller pour l'exécutable Windows
-- GDELT pour le flux d'articles
+**Anthony Hunt** · [ingevision.cloud](https://ingevision.cloud/?p=risque-fournisseur) · [LinkedIn](https://www.linkedin.com/in/anthony-hunt-3948a9196) · [GitHub](https://github.com/anthohunt)

@@ -1,42 +1,34 @@
 **English** · [Français](README.fr.md)
 
-**Anthony Hunt** · [Project page on ingevision.cloud](https://ingevision.cloud/?lang=en&p=risque-fournisseur) · [LinkedIn](https://www.linkedin.com/in/anthony-hunt-3948a9196) · [GitHub profile](https://github.com/anthohunt)
-
-> Showcase repository: the code and data of this project are private; this README describes it.
-
 # Supplier risk agent
 
-A small 0.8-billion-parameter model that reads the news and flags, offline, the articles that announce a risk for a supplier.
+**A 0.8-billion-parameter model, run on a laptop, reads the news and flags the articles that announce a risk for one of a client's suppliers.**
 
-## The problem
+[![Animated diagram: one article goes from the GDELT news feed through the collector, the harness, the Kev-0.8B model and the rules in code to the alert on screen, then the bench's real measurements (click for the full video)](docs/demo.gif)](https://drive.google.com/file/d/1FMFfoRbmpmj5kqtQE0tU73aXCwSu7vCI/view)
 
-A procurement team needs to know quickly when one of its suppliers is hit by an incident that can slow its deliveries: a production stop, a strike, a lawsuit, financial trouble, a shortage, a cyberattack. This project is a client case: the agent follows a list of 94 suppliers and must run on a laptop, without sending data outside.
+*Animated diagram, not a screen recording: the app runs an AI model on the laptop. Figures are the bench's real measurements. [Full video (1:18)](https://drive.google.com/file/d/1FMFfoRbmpmj5kqtQE0tU73aXCwSu7vCI/view)*
 
-## How it works
+## Using it
 
-- Articles come from the GDELT global news feed; the agent reads the full article.
-- It looks for a listed supplier that is hit by a disruptive event still under way, among six types: production, labour, legal, financial, price or shortage, cyber.
-- Code checks the source: the site's domain must be in a closed list of 2,033 reliable domains.
-- Decision: "risk" if the signal comes from a reliable source, "to check" otherwise (a human decides), "no risk" without a signal.
-- The model's weights are not changed. Only the harness around the model (questions asked, splitting, rules) is improved, by La boucle: a researcher agent proposes trials, each one is measured, and a sealed exam decides.
+- **Watch a supplier list.** 94 suppliers from a client case; articles come from the GDELT news feed and are read in full on the publisher's site.
+- **Three verdicts.** Risk, to check, no risk. A signal is a listed supplier hit by an event still under way, among six types: production, labour, legal, financial, price or shortage, cyber.
+- **Sources checked by code.** A signal becomes a risk only if the site is in a closed list of 2,033 reliable domains; otherwise a person decides.
+- **Model left as is.** Kev-0.8B's weights are never changed. [La boucle](https://github.com/anthohunt/la-boucle-engine) improves only the harness around it (questions, splitting, rules): a researcher agent proposes trials, each is measured, a sealed exam decides.
+- **Windows app.** A standalone `.exe` in English: articles with their verdict, an alert on a risk, the agent's reasoning.
 
-## What is built
+## Architecture
 
-- Test bench balanced across the three decisions: a sealed exam of 240 articles, a verification set of 240 articles. Pass mark set at 224 correct out of 240.
-- Training measured on 1,020 articles: from 76.18% correct decisions for the model alone to 90.39% (922 out of 1,020) with the best harness.
-- First exam: 205 correct out of 240 (85.4%), below the pass mark. Cause: overfitting to the training articles, hence the addition of a hidden control set.
-- Standalone Windows application, in English: list of articles with their verdict, alert on a risk, and the agent's reasoning. Total size 2.57 GB (model 1.52 GB, engine 0.94 GB, application 0.11 GB). On 100 articles, decisions identical to the bench's; 3.97 s per article on average.
+![Supplier risk agent architecture: GDELT lists articles, the collector fetches the full text from the publisher, the harness asks Kev-0.8B questions on the laptop, the rules in code turn its answers into risk, to check or no risk, and the window alerts the buyer](docs/architecture.en.svg)
 
-Status: paused. The second exam has not been taken.
+## Status
 
-## What is public
+- **Bench.** Balanced across the three verdicts: sealed exam of 240 articles, verification of 240; pass mark 224 / 240 on both.
+- **Measured.** On 1,020 training articles: 76.18 % correct decisions for the model alone, 90.39 % (922) with the best harness.
+- **Exam 1.** 205 / 240 (85.4 %), below the pass mark: overfitting to the training articles, hence a hidden control set.
+- **App.** 2.57 GB in all (model 1.52, engine 0.94, app 0.11); same decisions as the bench on 100 / 100 articles; 3.97 s per article on average.
+- **Paused since October 2026.** Exam 2 not taken. Code, data and app are a confidential client deliverable: this repository holds only this page.
+- **Stack.** Kev-0.8B (open-source decision model built on Qwen3.5-0.8B), Python, PyTorch and transformers on the bench, llama.cpp (CUDA) in the app, PyInstaller, GDELT.
 
-This page only. The code, the data and the application are a confidential client deliverable.
+---
 
-## Tech stack
-
-- Kev-0.8B, an open-source decision model based on Qwen3.5-0.8B
-- Python, PyTorch and transformers for training
-- llama.cpp (CUDA) as the application's engine
-- PyInstaller for the Windows executable
-- GDELT for the article feed
+**Anthony Hunt** · [ingevision.cloud](https://ingevision.cloud/?lang=en&p=risque-fournisseur) · [LinkedIn](https://www.linkedin.com/in/anthony-hunt-3948a9196) · [GitHub](https://github.com/anthohunt)
