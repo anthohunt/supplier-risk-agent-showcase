@@ -6,7 +6,7 @@
 
 [![Animated diagram: one article goes from the GDELT news feed through the collector, the harness, the Kev-0.8B model and the rules in code to the alert on screen, then the bench's real measurements (click for the full video)](docs/demo.gif)](https://drive.google.com/file/d/1FMFfoRbmpmj5kqtQE0tU73aXCwSu7vCI/view)
 
-*Animated diagram, not a screen recording: the app runs an AI model on the laptop. Figures are the bench's real measurements. [Full video (1:18)](https://drive.google.com/file/d/1FMFfoRbmpmj5kqtQE0tU73aXCwSu7vCI/view)*
+*One article's path, then the bench's measurements. [Full video (1:18)](https://drive.google.com/file/d/1FMFfoRbmpmj5kqtQE0tU73aXCwSu7vCI/view)*
 
 ## Using it
 
@@ -23,11 +23,11 @@
 ## Status
 
 - **Bench.** Balanced across the three verdicts: sealed exam of 240 articles, verification of 240; pass mark 224 / 240 on both.
-- **Measured.** On 1,020 training articles: 76.18 % correct decisions for the model alone, 90.39 % (922) with the best harness.
+- **Measured.** On 1,020 training articles: 76.18 % correct decisions for the model alone, 90.39 % (922) with the best harness, about 88 % on the 702 articles it had never seen.
 - **Exam 1.** 205 / 240 (85.4 %), below the pass mark: overfitting to the training articles, hence a hidden control set.
-- **App.** 2.57 GB in all (model 1.52, engine 0.94, app 0.11); same decisions as the bench on 100 / 100 articles; 3.97 s per article on average.
+- **App.** Runs the harness that sat exam 1. 2.57 GB in all (model 1.52, engine 0.94, app 0.11); same decisions as the bench on 100 / 100 articles; 3.97 s per article on average, GPU shared with the bench.
 - **Paused since October 2026.** Exam 2 not taken. Code, data and app are a confidential client deliverable: this repository holds only this page.
-- **Stack.** Kev-0.8B (open-source decision model built on Qwen3.5-0.8B), Python, PyTorch and transformers on the bench, llama.cpp (CUDA) in the app, PyInstaller, GDELT.
+- **Stack.** Kev-0.8B (open-source decision model built on Qwen3.5-0.8B), Python, PyTorch and transformers on the bench, llama.cpp (CUDA) in the app, PyInstaller.
 
 ---
 
