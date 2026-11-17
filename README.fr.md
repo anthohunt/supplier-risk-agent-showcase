@@ -20,6 +20,12 @@
 
 ![Architecture de l'agent risque fournisseur : GDELT liste les articles, le collecteur récupère le texte complet chez l'éditeur, le harnais pose ses questions à Kev-0.8B sur le portable, les règles en code transforment ses réponses en risque, à vérifier ou pas de risque, et la fenêtre alerte l'acheteur](docs/architecture.svg)
 
+<details><summary>Diagramme en français</summary>
+
+![Architecture de l'agent risque fournisseur : GDELT liste les articles, le collecteur récupère le texte complet chez l'éditeur, le harnais pose ses questions à Kev-0.8B sur le portable, les règles en code transforment ses réponses en risque, à vérifier ou pas de risque, et la fenêtre alerte l'acheteur](docs/architecture.fr.svg)
+
+</details>
+
 ## État
 
 - **Banc.** Équilibré entre les trois verdicts : examen scellé de 240 articles, vérification de 240 ; seuil de 224 / 240 sur les deux.

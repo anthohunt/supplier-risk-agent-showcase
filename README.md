@@ -18,7 +18,13 @@
 
 ## Architecture
 
-![Supplier risk agent architecture: GDELT lists articles, the collector fetches the full text from the publisher, the harness asks Kev-0.8B questions on the laptop, the rules in code turn its answers into risk, to check or no risk, and the window alerts the buyer](docs/architecture.en.svg)
+![Supplier risk agent architecture: GDELT lists articles, the collector fetches the full text from the publisher, the harness asks Kev-0.8B questions on the laptop, the rules in code turn its answers into risk, to check or no risk, and the window alerts the buyer](docs/architecture.svg)
+
+<details><summary>French version</summary>
+
+![Architecture de l'agent risque fournisseur : GDELT liste les articles, le collecteur récupère le texte complet chez l'éditeur, le harnais pose ses questions à Kev-0.8B sur le portable, les règles en code transforment ses réponses en risque, à vérifier ou pas de risque, et la fenêtre alerte l'acheteur](docs/architecture.fr.svg)
+
+</details>
 
 ## Status
 
