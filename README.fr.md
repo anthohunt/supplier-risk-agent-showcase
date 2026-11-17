@@ -6,7 +6,7 @@
 
 [![Schéma animé : un article part du flux de presse GDELT, passe par le collecteur, le harnais, le modèle Kev-0.8B et les règles en code jusqu'à l'alerte à l'écran, puis les vraies mesures du banc (cliquer pour la vidéo complète)](docs/demo.gif)](https://drive.google.com/file/d/1FMFfoRbmpmj5kqtQE0tU73aXCwSu7vCI/view)
 
-<details><summary>Animation en français</summary>
+<details><summary>Version française</summary>
 
 [![Schéma animé : un article part du flux de presse GDELT, passe par le collecteur, le harnais, le modèle Kev-0.8B et les règles en code jusqu'à l'alerte à l'écran, puis les vraies mesures du banc (cliquer pour la vidéo complète)](docs/demo.fr.gif)](https://drive.google.com/file/d/1ZEsKjU1clbmwX1BLNVl4TCTNQoqhprr7/view)
 
