@@ -4,15 +4,15 @@
 
 **A 0.8-billion-parameter model, run on a laptop, reads the news and flags the articles that announce a risk for one of a client's suppliers.**
 
-[![Animated diagram: one article goes from the GDELT news feed through the collector, the harness, the Kev-0.8B model and the rules in code to the alert on screen, then the bench's real measurements (click for the full video)](docs/demo.gif)](https://drive.google.com/file/d/1FMFfoRbmpmj5kqtQE0tU73aXCwSu7vCI/view)
+![Animated diagram: one article goes from the GDELT news feed through the collector, the harness, the Kev-0.8B model and the rules in code to the alert on screen, then the bench's real measurements](docs/demo.gif)
 
 <details><summary>French version</summary>
 
-[![Schéma animé : un article part du flux de presse GDELT, passe par le collecteur, le harnais, le modèle Kev-0.8B et les règles en code jusqu'à l'alerte à l'écran, puis les vraies mesures du banc (cliquer pour la vidéo complète)](docs/demo.fr.gif)](https://drive.google.com/file/d/1ZEsKjU1clbmwX1BLNVl4TCTNQoqhprr7/view)
+![Schéma animé : un article part du flux de presse GDELT, passe par le collecteur, le harnais, le modèle Kev-0.8B et les règles en code jusqu'à l'alerte à l'écran, puis les vraies mesures du banc](docs/demo.fr.gif)
 
 </details>
 
-*One article's path, then the bench's measurements. [Full video (1:18)](https://drive.google.com/file/d/1FMFfoRbmpmj5kqtQE0tU73aXCwSu7vCI/view)*
+*One article's path, then the bench's measurements.*
 
 ## Using it
 

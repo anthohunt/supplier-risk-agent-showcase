@@ -4,15 +4,15 @@
 
 **Un modèle de 0,8 milliard de paramètres, sur un ordinateur portable, lit la presse et signale les articles qui annoncent un risque pour un fournisseur d'un client.**
 
-[![Schéma animé : un article part du flux de presse GDELT, passe par le collecteur, le harnais, le modèle Kev-0.8B et les règles en code jusqu'à l'alerte à l'écran, puis les vraies mesures du banc (cliquer pour la vidéo complète)](docs/demo.gif)](https://drive.google.com/file/d/1FMFfoRbmpmj5kqtQE0tU73aXCwSu7vCI/view)
+![Schéma animé : un article part du flux de presse GDELT, passe par le collecteur, le harnais, le modèle Kev-0.8B et les règles en code jusqu'à l'alerte à l'écran, puis les vraies mesures du banc](docs/demo.gif)
 
 <details><summary>Version française</summary>
 
-[![Schéma animé : un article part du flux de presse GDELT, passe par le collecteur, le harnais, le modèle Kev-0.8B et les règles en code jusqu'à l'alerte à l'écran, puis les vraies mesures du banc (cliquer pour la vidéo complète)](docs/demo.fr.gif)](https://drive.google.com/file/d/1ZEsKjU1clbmwX1BLNVl4TCTNQoqhprr7/view)
+![Schéma animé : un article part du flux de presse GDELT, passe par le collecteur, le harnais, le modèle Kev-0.8B et les règles en code jusqu'à l'alerte à l'écran, puis les vraies mesures du banc](docs/demo.fr.gif)
 
 </details>
 
-*Le trajet d'un article, puis les mesures du banc. [Vidéo complète (1:18)](https://drive.google.com/file/d/1ZEsKjU1clbmwX1BLNVl4TCTNQoqhprr7/view)*
+*Le trajet d'un article, puis les mesures du banc.*
 
 ## Ce qu'on fait avec
 
